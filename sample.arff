@@ -1,0 +1,13 @@
+@relation 'value'
+
+@attribute A, {'1'}
+@attribute B, {'1'}
+@attribute C, {'1'}
+@attribute D, {'1'}
+@attribute E, {'1'}
+
+@data
+'1', ?, '1', '1', ?
+?, '1', '1', ?, '1'
+'1', '1', '1', ?, '1'
+?, '1', ?, ?, '1'
