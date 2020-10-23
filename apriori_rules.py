@@ -1,5 +1,11 @@
+# def loadDataSet():
+#     return [['A', 'C', 'D'], ['B', 'C', 'E'], ['A', 'B', 'C', 'E'], ['B', 'E']]
+
 def loadDataSet():
-    return [['A', 'C', 'D'], ['B', 'C', 'E'], ['A', 'B', 'C', 'E'], ['B', 'E']]
+    with open("kaggle.csv", "r") as fo:
+        lines = fo.readlines()
+        data = [ line.strip().split(",") for line in lines]
+        return data
 
 
 '''建立集合C1即對dataSet去重排序'''
@@ -196,23 +202,26 @@ def generateRules(L, supportData, minConf=0.7):
 def testGenerateRules():
     # 載入測試資料集
     dataSet = loadDataSet()
-    print ('dataSet: ', dataSet)
+    # print ('dataSet: ', dataSet)
 
     # Apriori 演算法生成頻繁項集以及它們的支援度
-    L1, supportData1 = apriori(dataSet, minSupport=0.5)
-    print ('L(0.7): ', L1)
-    print ('supportData(0.7): ', supportData1)
+    L1, supportData1 = apriori(dataSet, minSupport=0.01)
+    # print ('L(0.7): ', L1)
+    # print ('supportData(0.7): ', supportData1)
 
     # 生成關聯規則
-    rules = generateRules(L1, supportData1, minConf=0.5)
-    print ('rules: ', rules)
-    for r in rules:
-        print(r)
-    return rules
+    rules = generateRules(L1, supportData1, minConf=0.003)
+    # print ('rules: ', rules)
+    rules.sort(key=lambda r: r[2], reverse=True)
+    output_lines = [f'{r.__str__()}\n' for r in rules]
+    return output_lines
 
 
-r = testGenerateRules()
-len(r)
+if __name__ == "__main__":
+    output = testGenerateRules()
+    with open("project1.output", "w") as fw:
+        fw.writelines(output)
+        fw.close()
 
 
 
