@@ -1,9 +1,6 @@
-def load_data():
-    with open("dataset/kaggle.csv", "r") as fo:
-        lines = fo.readlines()
-        data = [set(line.strip().split(",")) for line in lines]
-        print(data[:5])
-        return data
+import argparse
+
+from dataset_loader import DataLoader
 
 def find_unique(data):
     items = set()
@@ -42,19 +39,30 @@ def build_data_rows(items, data):
     return data_str
 
 
-def generate_ARFF():
-    data = load_data()
+def generate_ARFF(data, data_type):
     items = find_unique(data)
 
     context = ""
-    context += build_relation("goods") + "\n"
+    context += build_relation(data_type) + "\n"
     context += build_attributes(items) + "\n"
     context += build_data_rows(items, data) + "\n"
 
-    with open("kaggle.arff", "w") as fw:
+    with open(f"dataset/{data_type}.arff", "w") as fw:
         fw.write(context)
         fw.close()
 
 
 if __name__ == "__main__":
-    generate_ARFF()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-t", "--type", required=True)
+
+    args = vars(ap.parse_args())
+
+    if args["type"] == "kaggle":
+        data = DataLoader.load_kaggle_data()
+    elif args["type"] == "sample":
+        data = DataLoader.load_test_data()
+    elif args["type"] == "ibm":
+        data = DataLoader.load_ibm_data()
+
+    generate_ARFF(data, args["type"])
