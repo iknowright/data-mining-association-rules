@@ -92,18 +92,21 @@ class FPGrowth():
 
     def _mineFPtree(self, inTree, headerTable, minSup, preFix, freqItemList, supportData):
         # 最开始的频繁项集是headerTable中的各元素
-        bigL = [v[0] for v in sorted(headerTable.items(), key=lambda p:p[1][0])] # 根据频繁项的总频次排序
-        for basePat in bigL: # 对每个频繁项
-            newFreqSet = preFix.copy()
-            newFreqSet.add(basePat)
-            freqItemList.append(frozenset(newFreqSet))
-            supportData[frozenset(newFreqSet)] = headerTable[basePat][0]
-            condPattBases = self._findPrefixPath(basePat, headerTable) # 当前频繁项集的条件模式基
-            myCondTree, myHead = self._createFPtree(condPattBases, minSup) # 构造当前频繁项的条件FP树
-            if myHead != None:
-                # print 'conditional tree for: ', newFreqSet
-                # myCondTree.disp(1)
-                self._mineFPtree(myCondTree, myHead, minSup, newFreqSet, freqItemList, supportData) # 递归挖掘条件FP树
+        try:
+            bigL = [v[0] for v in sorted(headerTable.items(), key=lambda p:p[1][0])] # 根据频繁项的总频次排序
+            for basePat in bigL: # 对每个频繁项
+                newFreqSet = preFix.copy()
+                newFreqSet.add(basePat)
+                freqItemList.append(frozenset(newFreqSet))
+                supportData[frozenset(newFreqSet)] = headerTable[basePat][0]
+                condPattBases = self._findPrefixPath(basePat, headerTable) # 当前频繁项集的条件模式基
+                myCondTree, myHead = self._createFPtree(condPattBases, minSup) # 构造当前频繁项的条件FP树
+                if myHead != None:
+                    # print 'conditional tree for: ', newFreqSet
+                    # myCondTree.disp(1)
+                    self._mineFPtree(myCondTree, myHead, minSup, newFreqSet, freqItemList, supportData) # 递归挖掘条件FP树
+        except:
+            pass
 
     def _createInitSet(self, dataSet):
         retDict={}
@@ -125,9 +128,9 @@ class FPGrowth():
         freqItems = []
         supportData = {}
 
-        if freqItems:
-            self._mineFPtree(myFPtree, myHeaderTab, minsup_index, set([]), freqItems, supportData)
+        self._mineFPtree(myFPtree, myHeaderTab, minsup_index, set([]), freqItems, supportData)
 
+        if freqItems:
             for k, v in supportData.items():
                 supportData[k] = round(v / len(data), 2)
 
