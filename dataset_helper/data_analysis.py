@@ -1,5 +1,5 @@
 def load_data():
-    with open("kaggle.csv", "r") as fo:
+    with open("dataset/kaggle.csv", "r") as fo:
         lines = fo.readlines()
         data = [line.strip().split(",") for line in lines]
         return data
