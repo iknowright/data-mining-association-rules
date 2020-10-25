@@ -55,12 +55,15 @@ class Associator():
         # 記錄可信度大於最小可信度（minConf）的集合
         prunedH = []
         for conseq in H: # 假設 freqSet = frozenset([1, 3]), H = [frozenset([1]), frozenset([3])]，那麼現在需要求出 frozenset([1]) -> frozenset([3]) 的可信度和 frozenset([3]) -> frozenset([1]) 的可信度
-            conf = supportData[freqSet]/supportData[freqSet-conseq] # 支援度定義: a -> b = support(a | b) / support(a). 假設  freqSet = frozenset([1, 3]), conseq = [frozenset([1])]，那麼 frozenset([1]) 至 frozenset([3]) 的可信度為 = support(a | b) / support(a) = supportData[freqSet]/supportData[freqSet-conseq] = supportData[frozenset([1, 3])] / supportData[frozenset([1])]
-            if conf >= minConf:
-                # 只要買了 freqSet-conseq 集合，一定會買 conseq 集合（freqSet-conseq 集合和 conseq集合 是全集）
-                print (freqSet-conseq, '-->', conseq, 'conf:', conf)
-                brl.append((freqSet-conseq, conseq, conf))
-                prunedH.append(conseq)
+            try:
+                conf = supportData[freqSet]/supportData[freqSet-conseq] # 支援度定義: a -> b = support(a | b) / support(a). 假設  freqSet = frozenset([1, 3]), conseq = [frozenset([1])]，那麼 frozenset([1]) 至 frozenset([3]) 的可信度為 = support(a | b) / support(a) = supportData[freqSet]/supportData[freqSet-conseq] = supportData[frozenset([1, 3])] / supportData[frozenset([1])]
+                if conf >= minConf:
+                    # 只要買了 freqSet-conseq 集合，一定會買 conseq 集合（freqSet-conseq 集合和 conseq集合 是全集）
+                    print (freqSet-conseq, '-->', conseq, 'conf:', conf)
+                    brl.append((freqSet-conseq, conseq, conf))
+                    prunedH.append(conseq)
+            except:
+                pass
         return prunedH
 
 
@@ -117,7 +120,8 @@ class Associator():
 
 
     @execution_timer
-    def generate_rules(self, algorithm, type, minsup, minconf):
+    def generate_rules(self, algorithm, data, minsup, minconf):
+        print(algorithm)
         L1, supportData1 = algorithm.generateFrequentSet(data, minsup)
 
         # 生成關聯規則
@@ -151,7 +155,7 @@ if __name__ == "__main__":
     elif args["algorithm"] == "F":
         algorithm = FPGrowth()
 
-    output, _ = Associator().generate_rules(algorithm, args["type"], float(args["minsup"]), float(args["minconf"]))
+    output, _ = Associator().generate_rules(algorithm, data, float(args["minsup"]), float(args["minconf"]))
     with open(f"results/{args['type']}_{algorithm.__class__.__name__}.csv", "w") as fw:
         fw.writelines(output)
         fw.close()
