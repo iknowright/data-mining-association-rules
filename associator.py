@@ -122,8 +122,8 @@ def generate_rules(algorithm, type, minsup, minconf):
     # 生成關聯規則
     rules = generateRules(L1, supportData1, minConf=minconf)
     # print ('rules: ', rules)
-    rules.sort(key=lambda r: r[2], reverse=True)
-    output_lines = [f'{set(r[0])} ==> {set(r[1])},{round(r[2], 2)}\n' for r in rules]
+    rules.sort(key=lambda r: (r[2], sorted(list(r[0])), sorted(list(r[1]))), reverse=True)
+    output_lines = [f'{"/".join(sorted(list(r[0])))} ==> {"/".join(sorted(list(r[1])))},{round(r[2], 2)}\n' for r in rules]
     return output_lines
 
 
