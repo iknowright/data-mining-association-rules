@@ -1,5 +1,21 @@
-def loadDataSet():
-    return [['A', 'C', 'D'], ['B', 'C', 'E'], ['A', 'B', 'C', 'E'], ['B', 'E']]
+import argparse
+import time
+
+from dataset_helper.dataset_loader import DataLoader
+
+
+def execution_timer(func):
+    """
+    timer for execution
+    """
+
+    def wrapper(*args):
+        start = time.time()
+        func_ret = func(*args)
+        elapsed = time.time() - start
+        print(f'{func.__name__}:time {elapsed} elapsed second(s)')
+        return func_ret
+    return wrapper
 
 
 class treeNode:
@@ -95,18 +111,14 @@ def findPrefixPath(basePat, myHeaderTab):
 
 def mineFPtree(inTree, headerTable, minSup, preFix, freqItemList, supportData):
     # 最开始的频繁项集是headerTable中的各元素
-    print("======>", headerTable.items())
     bigL = [v[0] for v in sorted(headerTable.items(), key=lambda p:p[1][0])] # 根据频繁项的总频次排序
-    print("======>", bigL)
     for basePat in bigL: # 对每个频繁项
         newFreqSet = preFix.copy()
         newFreqSet.add(basePat)
         freqItemList.append(frozenset(newFreqSet))
         supportData[frozenset(newFreqSet)] = headerTable[basePat][0]
         condPattBases = findPrefixPath(basePat, headerTable) # 当前频繁项集的条件模式基
-        print(newFreqSet, condPattBases)
         myCondTree, myHead = createFPtree(condPattBases, minSup) # 构造当前频繁项的条件FP树
-        print(myHead)
         if myHead != None:
             # print 'conditional tree for: ', newFreqSet
             # myCondTree.disp(1)
@@ -210,7 +222,6 @@ def generateRules(L, supportData, minConf=0.7):
     for freqSet in L:
         # 組合總的元素並遍歷子元素，轉化為 frozenset集合存放到 list 列表中
         H1 = [frozenset([item]) for item in freqSet]
-        # print(H1)
         # 2 個的組合else, 2 個以上的組合 if
         if (len(freqSet) > 2):
             rulesFromConseq(freqSet, H1, supportData, bigRuleList, minConf)
@@ -218,35 +229,45 @@ def generateRules(L, supportData, minConf=0.7):
             calcConf(freqSet, H1, supportData, bigRuleList, minConf)
     return bigRuleList
 
+@execution_timer
+def generateFPGrowthRules(data, minsup, minconf):
+    minsup_index = minsup * len(data)
 
-
-if __name__ == "__main__":
-    simDat = loadDataSet()
-    initSet = createInitSet(simDat)
-    myFPtree, myHeaderTab = createFPtree(initSet, 2)
-    print(myFPtree.display())
-    print(myHeaderTab)
+    initSet = createInitSet(data)
+    myFPtree, myHeaderTab = createFPtree(initSet, minsup_index)
 
     freqItems = []
     supportData = {}
-    mineFPtree(myFPtree, myHeaderTab, 2, set([]), freqItems, supportData)
-    for x in freqItems:
-        print(x)
+    mineFPtree(myFPtree, myHeaderTab, minsup_index, set([]), freqItems, supportData)
 
     for k, v in supportData.items():
-        supportData[k] = round(v / len(simDat), 2)
-        print(k,supportData[k])
-
-    print()
+        supportData[k] = round(v / len(data), 2)
 
     # 生成關聯規則
-    rules = generateRules(freqItems, supportData, minConf=0.5)
+    rules = generateRules(freqItems, supportData, minConf=minconf)
     # print ('rules: ', rules)
     rules.sort(key=lambda r: r[2], reverse=True)
-    output_lines = [f'{r.__str__()}\n' for r in rules]
-    # print(output_lines)
+    output_lines = [f'{set(r[0])} ==> {set(r[1])},{round(r[2], 2)}\n' for r in rules]
+    return output_lines
 
-    print()
-    for a,b, conf in rules:
-        print(a, '-->', b, 'conf:', conf)
 
+if __name__ == "__main__":
+     # create argument for weka
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-t", "--type", required=True)
+    ap.add_argument("-s", "--minsup", required=True)
+    ap.add_argument("-c", "--minconf", required=True)
+    args = vars(ap.parse_args())
+
+    # Determine dataset
+    if args["type"] == "kaggle":
+        data = DataLoader.load_kaggle_data()
+    elif args["type"] == "sample":
+        data = DataLoader.load_test_data()
+    elif args["type"] == "ibm":
+        data = DataLoader.load_ibm_data()
+
+    output = generateFPGrowthRules(data, float(args["minsup"]), float(args["minconf"]))
+    with open(f"results/{args['type']}_FPGrowth.csv", "w") as fw:
+        fw.writelines(output)
+        fw.close()

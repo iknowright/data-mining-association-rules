@@ -1,0 +1,381 @@
+{'soup'} ==> {'mineral water'},0.46
+{'olive oil'} ==> {'mineral water'},0.42
+{'ground beef'} ==> {'mineral water'},0.42
+{'salmon'} ==> {'mineral water'},0.4
+{'cereals'} ==> {'mineral water'},0.4
+{'ground beef'} ==> {'spaghetti'},0.4
+{'cooking oil'} ==> {'mineral water'},0.39
+{'red wine'} ==> {'mineral water'},0.39
+{'chicken'} ==> {'mineral water'},0.38
+{'frozen vegetables'} ==> {'mineral water'},0.37
+{'milk'} ==> {'mineral water'},0.37
+{'red wine'} ==> {'spaghetti'},0.36
+{'tomatoes'} ==> {'mineral water'},0.36
+{'pancakes'} ==> {'mineral water'},0.35
+{'olive oil'} ==> {'spaghetti'},0.35
+{'avocado'} ==> {'mineral water'},0.35
+{'herb & pepper'} ==> {'mineral water'},0.35
+{'whole wheat rice'} ==> {'mineral water'},0.34
+{'spaghetti'} ==> {'mineral water'},0.34
+{'cake'} ==> {'mineral water'},0.34
+{'grated cheese'} ==> {'mineral water'},0.33
+{'burgers'} ==> {'eggs'},0.33
+{'shrimp'} ==> {'mineral water'},0.33
+{'herb & pepper'} ==> {'spaghetti'},0.33
+{'herb & pepper'} ==> {'ground beef'},0.32
+{'chocolate'} ==> {'mineral water'},0.32
+{'frozen smoothie'} ==> {'mineral water'},0.32
+{'honey'} ==> {'mineral water'},0.32
+{'salmon'} ==> {'spaghetti'},0.32
+{'grated cheese'} ==> {'spaghetti'},0.32
+{'low fat yogurt'} ==> {'mineral water'},0.31
+{'turkey'} ==> {'eggs'},0.31
+{'cooking oil'} ==> {'spaghetti'},0.31
+{'fresh bread'} ==> {'mineral water'},0.31
+{'turkey'} ==> {'mineral water'},0.31
+{'tomatoes'} ==> {'spaghetti'},0.31
+{'soup'} ==> {'milk'},0.3
+{'shrimp'} ==> {'spaghetti'},0.3
+{'frozen vegetables'} ==> {'spaghetti'},0.29
+{'chicken'} ==> {'spaghetti'},0.29
+{'eggs'} ==> {'mineral water'},0.28
+{'soup'} ==> {'spaghetti'},0.28
+{'burgers'} ==> {'mineral water'},0.28
+{'milk'} ==> {'spaghetti'},0.27
+{'cooking oil'} ==> {'chocolate'},0.27
+{'pancakes'} ==> {'spaghetti'},0.27
+{'turkey'} ==> {'spaghetti'},0.26
+{'olive oil'} ==> {'milk'},0.26
+{'herb & pepper'} ==> {'eggs'},0.25
+{'burgers'} ==> {'french fries'},0.25
+{'shrimp'} ==> {'chocolate'},0.25
+{'salmon'} ==> {'chocolate'},0.25
+{'mineral water'} ==> {'spaghetti'},0.25
+{'honey'} ==> {'spaghetti'},0.25
+{'olive oil'} ==> {'chocolate'},0.25
+{'milk'} ==> {'chocolate'},0.25
+{'champagne'} ==> {'chocolate'},0.25
+{'frozen vegetables'} ==> {'milk'},0.25
+{'chicken'} ==> {'milk'},0.25
+{'frozen smoothie'} ==> {'spaghetti'},0.25
+{'shrimp'} ==> {'milk'},0.25
+{'burgers'} ==> {'spaghetti'},0.25
+{'chicken'} ==> {'chocolate'},0.24
+{'whole wheat rice'} ==> {'spaghetti'},0.24
+{'frozen vegetables'} ==> {'chocolate'},0.24
+{'chicken'} ==> {'eggs'},0.24
+{'chocolate'} ==> {'spaghetti'},0.24
+{'milk'} ==> {'eggs'},0.24
+{'tomatoes'} ==> {'frozen vegetables'},0.24
+{'frozen smoothie'} ==> {'chocolate'},0.24
+{'cake'} ==> {'eggs'},0.24
+{'green tea'} ==> {'mineral water'},0.24
+{'ground beef'} ==> {'chocolate'},0.23
+{'shrimp'} ==> {'frozen vegetables'},0.23
+{'cooking oil'} ==> {'eggs'},0.23
+{'frozen smoothie'} ==> {'french fries'},0.23
+{'pancakes'} ==> {'eggs'},0.23
+{'frozen vegetables'} ==> {'eggs'},0.23
+{'frozen smoothie'} ==> {'milk'},0.23
+{'spaghetti'} ==> {'chocolate'},0.23
+{'spaghetti'} ==> {'ground beef'},0.23
+{'cooking oil'} ==> {'milk'},0.22
+{'ground beef'} ==> {'milk'},0.22
+{'cake'} ==> {'spaghetti'},0.22
+{'escalope'} ==> {'chocolate'},0.22
+{'mineral water'} ==> {'chocolate'},0.22
+{'cake'} ==> {'french fries'},0.22
+{'low fat yogurt'} ==> {'eggs'},0.22
+{'grated cheese'} ==> {'ground beef'},0.22
+{'green tea'} ==> {'french fries'},0.22
+{'escalope'} ==> {'mineral water'},0.22
+{'olive oil'} ==> {'ground beef'},0.21
+{'mineral water'} ==> {'eggs'},0.21
+{'french fries'} ==> {'eggs'},0.21
+{'pancakes'} ==> {'french fries'},0.21
+{'chocolate'} ==> {'french fries'},0.21
+{'spaghetti'} ==> {'eggs'},0.21
+{'pancakes'} ==> {'chocolate'},0.21
+{'grated cheese'} ==> {'chocolate'},0.21
+{'escalope'} ==> {'french fries'},0.21
+{'whole wheat rice'} ==> {'chocolate'},0.21
+{'burgers'} ==> {'milk'},0.2
+{'tomatoes'} ==> {'milk'},0.2
+{'tomatoes'} ==> {'chocolate'},0.2
+{'spaghetti'} ==> {'milk'},0.2
+{'ground beef'} ==> {'eggs'},0.2
+{'eggs'} ==> {'spaghetti'},0.2
+{'whole wheat rice'} ==> {'milk'},0.2
+{'chocolate'} ==> {'eggs'},0.2
+{'eggs'} ==> {'french fries'},0.2
+{'mineral water'} ==> {'milk'},0.2
+{'french fries'} ==> {'chocolate'},0.2
+{'green tea'} ==> {'spaghetti'},0.2
+{'soup'} ==> {'chocolate'},0.2
+{'burgers'} ==> {'green tea'},0.2
+{'frozen vegetables'} ==> {'french fries'},0.2
+{'low fat yogurt'} ==> {'spaghetti'},0.2
+{'grated cheese'} ==> {'french fries'},0.2
+{'chicken'} ==> {'green tea'},0.2
+{'shrimp'} ==> {'eggs'},0.2
+{'french fries'} ==> {'mineral water'},0.2
+{'chocolate'} ==> {'milk'},0.2
+{'burgers'} ==> {'chocolate'},0.2
+{'low fat yogurt'} ==> {'chocolate'},0.19
+{'green tea'} ==> {'eggs'},0.19
+{'turkey'} ==> {'green tea'},0.19
+{'whole wheat rice'} ==> {'eggs'},0.19
+{'eggs'} ==> {'chocolate'},0.18
+{'chicken'} ==> {'french fries'},0.18
+{'milk'} ==> {'french fries'},0.18
+{'olive oil'} ==> {'eggs'},0.18
+{'milk'} ==> {'frozen vegetables'},0.18
+{'turkey'} ==> {'milk'},0.18
+{'turkey'} ==> {'chocolate'},0.18
+{'whole wheat rice'} ==> {'french fries'},0.18
+{'tomatoes'} ==> {'green tea'},0.18
+{'tomatoes'} ==> {'eggs'},0.18
+{'frozen vegetables'} ==> {'ground beef'},0.18
+{'green tea'} ==> {'chocolate'},0.18
+{'frozen smoothie'} ==> {'green tea'},0.18
+{'escalope'} ==> {'spaghetti'},0.18
+{'tomatoes'} ==> {'french fries'},0.18
+{'frozen vegetables'} ==> {'shrimp'},0.17
+{'frozen smoothie'} ==> {'eggs'},0.17
+{'cake'} ==> {'green tea'},0.17
+{'low fat yogurt'} ==> {'french fries'},0.17
+{'pancakes'} ==> {'milk'},0.17
+{'ground beef'} ==> {'mineral water', 'spaghetti'},0.17
+{'pancakes'} ==> {'green tea'},0.17
+{'low fat yogurt'} ==> {'milk'},0.17
+{'ground beef'} ==> {'frozen vegetables'},0.17
+{'olive oil'} ==> {'frozen vegetables'},0.17
+{'mineral water'} ==> {'ground beef'},0.17
+{'tomatoes'} ==> {'ground beef'},0.17
+{'eggs'} ==> {'milk'},0.17
+{'turkey'} ==> {'french fries'},0.17
+{'turkey'} ==> {'burgers'},0.17
+{'milk'} ==> {'ground beef'},0.17
+{'frozen vegetables'} ==> {'tomatoes'},0.17
+{'cake'} ==> {'chocolate'},0.17
+{'french fries'} ==> {'green tea'},0.17
+{'cookies'} ==> {'french fries'},0.17
+{'cake'} ==> {'milk'},0.16
+{'olive oil'} ==> {'pancakes'},0.16
+{'tomatoes'} ==> {'shrimp'},0.16
+{'ground beef'} ==> {'herb & pepper'},0.16
+{'french fries'} ==> {'spaghetti'},0.16
+{'shrimp'} ==> {'ground beef'},0.16
+{'shrimp'} ==> {'green tea'},0.16
+{'eggs'} ==> {'burgers'},0.16
+{'spaghetti'} ==> {'frozen vegetables'},0.16
+{'spaghetti'} ==> {'french fries'},0.16
+{'shrimp'} ==> {'tomatoes'},0.16
+{'olive oil'} ==> {'mineral water', 'spaghetti'},0.16
+{'pancakes'} ==> {'ground beef'},0.15
+{'spaghetti'} ==> {'green tea'},0.15
+{'frozen vegetables'} ==> {'green tea'},0.15
+{'ground beef'} ==> {'green tea'},0.15
+{'mineral water'} ==> {'frozen vegetables'},0.15
+{'cookies'} ==> {'green tea'},0.15
+{'ground beef'} ==> {'pancakes'},0.15
+{'shrimp'} ==> {'pancakes'},0.15
+{'cake'} ==> {'pancakes'},0.15
+{'spaghetti'} ==> {'pancakes'},0.14
+{'ground beef'} ==> {'olive oil'},0.14
+{'chocolate'} ==> {'green tea'},0.14
+{'eggs'} ==> {'green tea'},0.14
+{'pancakes'} ==> {'frozen vegetables'},0.14
+{'mineral water'} ==> {'french fries'},0.14
+{'mineral water'} ==> {'pancakes'},0.14
+{'cake'} ==> {'burgers'},0.14
+{'frozen vegetables'} ==> {'pancakes'},0.14
+{'ground beef'} ==> {'french fries'},0.14
+{'chocolate'} ==> {'ground beef'},0.14
+{'chocolate'} ==> {'frozen vegetables'},0.14
+{'escalope'} ==> {'eggs'},0.14
+{'french fries'} ==> {'milk'},0.14
+{'milk'} ==> {'burgers'},0.14
+{'burgers'} ==> {'ground beef'},0.14
+{'milk'} ==> {'shrimp'},0.14
+{'milk'} ==> {'green tea'},0.14
+{'green tea'} ==> {'milk'},0.13
+{'low fat yogurt'} ==> {'frozen vegetables'},0.13
+{'green tea'} ==> {'burgers'},0.13
+{'spaghetti'} ==> {'olive oil'},0.13
+{'milk'} ==> {'olive oil'},0.13
+{'burgers'} ==> {'cake'},0.13
+{'cookies'} ==> {'eggs'},0.13
+{'mineral water'} ==> {'green tea'},0.13
+{'cookies'} ==> {'chocolate'},0.13
+{'french fries'} ==> {'burgers'},0.13
+{'milk'} ==> {'pancakes'},0.13
+{'cake'} ==> {'frozen vegetables'},0.13
+{'frozen vegetables'} ==> {'mineral water', 'spaghetti'},0.13
+{'pancakes'} ==> {'cake'},0.12
+{'green tea'} ==> {'pancakes'},0.12
+{'spaghetti'} ==> {'burgers'},0.12
+{'burgers'} ==> {'turkey'},0.12
+{'ground beef'} ==> {'burgers'},0.12
+{'spaghetti'} ==> {'shrimp'},0.12
+{'milk'} ==> {'mineral water', 'spaghetti'},0.12
+{'chocolate'} ==> {'pancakes'},0.12
+{'eggs'} ==> {'frozen vegetables'},0.12
+{'eggs'} ==> {'pancakes'},0.12
+{'burgers'} ==> {'frozen vegetables'},0.12
+{'burgers'} ==> {'pancakes'},0.12
+{'pancakes'} ==> {'mineral water', 'spaghetti'},0.12
+{'spaghetti'} ==> {'tomatoes'},0.12
+{'ground beef'} ==> {'tomatoes'},0.12
+{'frozen vegetables'} ==> {'olive oil'},0.12
+{'french fries'} ==> {'pancakes'},0.12
+{'milk'} ==> {'soup'},0.12
+{'ground beef'} ==> {'shrimp'},0.12
+{'frozen vegetables'} ==> {'mineral water', 'milk'},0.12
+{'mineral water'} ==> {'olive oil'},0.12
+{'ground beef'} ==> {'grated cheese'},0.12
+{'mineral water'} ==> {'cake'},0.12
+{'milk'} ==> {'chicken'},0.11
+{'pancakes'} ==> {'olive oil'},0.11
+{'ground beef'} ==> {'mineral water', 'milk'},0.11
+{'green tea'} ==> {'ground beef'},0.11
+{'french fries'} ==> {'frozen vegetables'},0.11
+{'eggs'} ==> {'ground beef'},0.11
+{'ground beef'} ==> {'mineral water', 'chocolate'},0.11
+{'pancakes'} ==> {'shrimp'},0.11
+{'pancakes'} ==> {'burgers'},0.11
+{'frozen vegetables'} ==> {'burgers'},0.11
+{'milk'} ==> {'frozen smoothie'},0.11
+{'chocolate'} ==> {'shrimp'},0.11
+{'green tea'} ==> {'frozen vegetables'},0.11
+{'eggs'} ==> {'turkey'},0.11
+{'milk'} ==> {'tomatoes'},0.11
+{'milk'} ==> {'mineral water', 'chocolate'},0.11
+{'frozen vegetables'} ==> {'cake'},0.11
+{'chocolate'} ==> {'escalope'},0.11
+{'green tea'} ==> {'cake'},0.11
+{'frozen vegetables'} ==> {'low fat yogurt'},0.11
+{'eggs'} ==> {'cake'},0.11
+{'french fries'} ==> {'cake'},0.1
+{'chocolate'} ==> {'burgers'},0.1
+{'spaghetti'} ==> {'cake'},0.1
+{'ground beef'} ==> {'mineral water', 'eggs'},0.1
+{'milk'} ==> {'cake'},0.1
+{'mineral water'} ==> {'tomatoes'},0.1
+{'mineral water'} ==> {'burgers'},0.1
+{'milk'} ==> {'low fat yogurt'},0.1
+{'milk'} ==> {'mineral water', 'eggs'},0.1
+{'mineral water'} ==> {'low fat yogurt'},0.1
+{'chocolate'} ==> {'olive oil'},0.1
+{'mineral water'} ==> {'shrimp'},0.1
+{'spaghetti'} ==> {'chicken'},0.1
+{'spaghetti'} ==> {'mineral water', 'ground beef'},0.1
+{'chocolate'} ==> {'mineral water', 'spaghetti'},0.1
+{'mineral water'} ==> {'soup'},0.1
+{'french fries'} ==> {'escalope'},0.1
+{'mineral water'} ==> {'chicken'},0.1
+{'spaghetti'} ==> {'grated cheese'},0.09
+{'spaghetti'} ==> {'turkey'},0.09
+{'eggs'} ==> {'low fat yogurt'},0.09
+{'spaghetti'} ==> {'herb & pepper'},0.09
+{'green tea'} ==> {'tomatoes'},0.09
+{'milk'} ==> {'whole wheat rice'},0.09
+{'chocolate'} ==> {'frozen smoothie'},0.09
+{'spaghetti'} ==> {'cooking oil'},0.09
+{'spaghetti'} ==> {'mineral water', 'chocolate'},0.09
+{'green tea'} ==> {'cookies'},0.09
+{'spaghetti'} ==> {'mineral water', 'milk'},0.09
+{'chocolate'} ==> {'low fat yogurt'},0.09
+{'green tea'} ==> {'turkey'},0.09
+{'green tea'} ==> {'chicken'},0.09
+{'spaghetti'} ==> {'frozen smoothie'},0.09
+{'chocolate'} ==> {'chicken'},0.09
+{'milk'} ==> {'cooking oil'},0.09
+{'milk'} ==> {'turkey'},0.09
+{'spaghetti'} ==> {'low fat yogurt'},0.09
+{'green tea'} ==> {'shrimp'},0.09
+{'chocolate'} ==> {'tomatoes'},0.09
+{'chocolate'} ==> {'mineral water', 'milk'},0.09
+{'milk'} ==> {'mineral water', 'frozen vegetables'},0.09
+{'milk'} ==> {'mineral water', 'ground beef'},0.09
+{'french fries'} ==> {'frozen smoothie'},0.09
+{'mineral water'} ==> {'frozen smoothie'},0.09
+{'green tea'} ==> {'frozen smoothie'},0.08
+{'mineral water'} ==> {'cooking oil'},0.08
+{'mineral water'} ==> {'whole wheat rice'},0.08
+{'milk'} ==> {'spaghetti', 'chocolate'},0.08
+{'chocolate'} ==> {'cake'},0.08
+{'chocolate'} ==> {'cooking oil'},0.08
+{'chocolate'} ==> {'mineral water', 'eggs'},0.08
+{'spaghetti'} ==> {'soup'},0.08
+{'spaghetti'} ==> {'mineral water', 'eggs'},0.08
+{'spaghetti'} ==> {'whole wheat rice'},0.08
+{'french fries'} ==> {'ground beef'},0.08
+{'mineral water'} ==> {'turkey'},0.08
+{'spaghetti'} ==> {'escalope'},0.08
+{'eggs'} ==> {'chicken'},0.08
+{'eggs'} ==> {'mineral water', 'spaghetti'},0.08
+{'eggs'} ==> {'shrimp'},0.08
+{'french fries'} ==> {'cookies'},0.08
+{'french fries'} ==> {'low fat yogurt'},0.08
+{'spaghetti'} ==> {'salmon'},0.08
+{'eggs'} ==> {'mineral water', 'chocolate'},0.07
+{'mineral water'} ==> {'grated cheese'},0.07
+{'chocolate'} ==> {'whole wheat rice'},0.07
+{'eggs'} ==> {'mineral water', 'milk'},0.07
+{'mineral water'} ==> {'herb & pepper'},0.07
+{'mineral water'} ==> {'escalope'},0.07
+{'mineral water'} ==> {'salmon'},0.07
+{'mineral water'} ==> {'spaghetti', 'ground beef'},0.07
+{'chocolate'} ==> {'champagne'},0.07
+{'french fries'} ==> {'tomatoes'},0.07
+{'eggs'} ==> {'herb & pepper'},0.07
+{'chocolate'} ==> {'turkey'},0.07
+{'spaghetti'} ==> {'mineral water', 'frozen vegetables'},0.07
+{'eggs'} ==> {'tomatoes'},0.07
+{'spaghetti'} ==> {'honey'},0.07
+{'eggs'} ==> {'olive oil'},0.07
+{'chocolate'} ==> {'grated cheese'},0.07
+{'chocolate'} ==> {'mineral water', 'ground beef'},0.07
+{'chocolate'} ==> {'spaghetti', 'milk'},0.07
+{'mineral water'} ==> {'spaghetti', 'chocolate'},0.07
+{'mineral water'} ==> {'spaghetti', 'milk'},0.07
+{'spaghetti'} ==> {'mineral water', 'pancakes'},0.07
+{'eggs'} ==> {'cooking oil'},0.07
+{'chocolate'} ==> {'salmon'},0.07
+{'french fries'} ==> {'chicken'},0.06
+{'chocolate'} ==> {'spaghetti', 'eggs'},0.06
+{'chocolate'} ==> {'cookies'},0.06
+{'mineral water'} ==> {'honey'},0.06
+{'spaghetti'} ==> {'chocolate', 'milk'},0.06
+{'french fries'} ==> {'turkey'},0.06
+{'chocolate'} ==> {'soup'},0.06
+{'french fries'} ==> {'whole wheat rice'},0.06
+{'eggs'} ==> {'escalope'},0.06
+{'eggs'} ==> {'frozen smoothie'},0.06
+{'french fries'} ==> {'grated cheese'},0.06
+{'eggs'} ==> {'whole wheat rice'},0.06
+{'spaghetti'} ==> {'chocolate', 'eggs'},0.06
+{'mineral water'} ==> {'spaghetti', 'eggs'},0.06
+{'french fries'} ==> {'mineral water', 'spaghetti'},0.06
+{'spaghetti'} ==> {'red wine'},0.06
+{'spaghetti'} ==> {'olive oil', 'mineral water'},0.06
+{'mineral water'} ==> {'chocolate', 'milk'},0.06
+{'eggs'} ==> {'cookies'},0.06
+{'eggs'} ==> {'spaghetti', 'chocolate'},0.06
+{'spaghetti'} ==> {'mineral water', 'french fries'},0.06
+{'mineral water'} ==> {'chocolate', 'eggs'},0.06
+{'eggs'} ==> {'mineral water', 'ground beef'},0.06
+{'mineral water'} ==> {'fresh bread'},0.06
+{'mineral water'} ==> {'eggs', 'milk'},0.05
+{'mineral water'} ==> {'spaghetti', 'frozen vegetables'},0.05
+{'mineral water'} ==> {'avocado'},0.05
+{'mineral water'} ==> {'spaghetti', 'pancakes'},0.05
+{'mineral water'} ==> {'frozen vegetables', 'milk'},0.05
+{'mineral water'} ==> {'ground beef', 'milk'},0.05
+{'mineral water'} ==> {'red wine'},0.05
+{'mineral water'} ==> {'chocolate', 'ground beef'},0.05
+{'mineral water'} ==> {'cereals'},0.04
+{'mineral water'} ==> {'olive oil', 'spaghetti'},0.04
+{'mineral water'} ==> {'spaghetti', 'french fries'},0.04
+{'mineral water'} ==> {'ground beef', 'eggs'},0.04

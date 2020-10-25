@@ -1,11 +1,21 @@
-def loadDataSet():
-    return [['A', 'C', 'D'], ['B', 'C', 'E'], ['A', 'B', 'C', 'E'], ['B', 'E']]
+import argparse
+import time
 
-# def loadDataSet():
-#     with open("dataset/kaggle.csv", "r") as fo:
-#         lines = fo.readlines()
-#         data = [line.strip().split(",") for line in lines]
-#         return data
+from dataset_helper.dataset_loader import DataLoader
+
+
+def execution_timer(func):
+    """
+    timer for execution
+    """
+
+    def wrapper(*args):
+        start = time.time()
+        func_ret = func(*args)
+        elapsed = time.time() - start
+        print(f'{func.__name__}:time {elapsed} elapsed second(s)')
+        return func_ret
+    return wrapper
 
 
 '''建立集合C1即對dataSet去重排序'''
@@ -71,7 +81,7 @@ def aprioriGen(Lk, k):
 返回：L 頻繁項集的全集
       supportData 所有元素和支援度的全集
 '''
-def apriori(dataSet, minSupport=0.5):
+def apriori(dataSet, minSupport):
     # C1即對dataSet去重排序，然後轉換所有的元素為frozenset
     C1 = createC1(dataSet)
     # print(C1)
@@ -109,7 +119,7 @@ Args:
 Returns:
     prunedH 記錄 可信度大於閾值的集合
 '''
-def calcConf(freqSet, H, supportData, brl, minConf=0.7):
+def calcConf(freqSet, H, supportData, brl, minConf):
     # 記錄可信度大於最小可信度（minConf）的集合
     prunedH = []
     for conseq in H: # 假設 freqSet = frozenset([1, 3]), H = [frozenset([1]), frozenset([3])]，那麼現在需要求出 frozenset([1]) -> frozenset([3]) 的可信度和 frozenset([3]) -> frozenset([1]) 的可信度
@@ -130,7 +140,7 @@ def calcConf(freqSet, H, supportData, brl, minConf=0.7):
         brl 關聯規則列表的陣列
         minConf 最小可信度
 """
-def rulesFromConseq(freqSet, H, supportData, brl, minConf=0.7):
+def rulesFromConseq(freqSet, H, supportData, brl, minConf):
     # H[0] 是 freqSet 的元素組合的第一個元素，並且 H 中所有元素的長度都一樣，長度由 aprioriGen(H, m+1) 這裡的 m + 1 來控制
     # 該函式遞迴時，H[0] 的長度從 1 開始增長 1 2 3 ...
     # 假設 freqSet = frozenset([2, 3, 5]), H = [frozenset([2]), frozenset([3]), frozenset([5])]
@@ -161,7 +171,7 @@ def rulesFromConseq(freqSet, H, supportData, brl, minConf=0.7):
     Returns:
         bigRuleList 可信度規則列表（關於 (A->B+置信度) 3個欄位的組合）
 '''
-def generateRules(L, supportData, minConf=0.7):
+def generateRules(L, supportData, minConf):
     bigRuleList = []
     for i in range(1, len(L)):
         # 獲取頻繁項集中每個組合的所有元素
@@ -177,41 +187,42 @@ def generateRules(L, supportData, minConf=0.7):
     return bigRuleList
 
 
-def testGenerateRules():
-    # 載入測試資料集
-    dataSet = loadDataSet()
-    # print ('dataSet: ', dataSet)
-
+@execution_timer
+def generateAprioriRules(data, minsup, minconf):
     # Apriori 演算法生成頻繁項集以及它們的支援度
-    L1, supportData1 = apriori(dataSet, minSupport=0.5)
-    print(L1)
-    for L in L1:
-        for i in L:
-            print(i)
-    print(supportData1)
+    L1, supportData1 = apriori(data, minSupport=minsup)
+    # for L in L1:
+    #     for i in L:
+    #         print(i)
 
-    for k,v in supportData1.items():
-        print(k, v)
-
+    # for k,v in supportData1.items():
+        # print(k, v)
 
     # 生成關聯規則
-    rules = generateRules(L1, supportData1, minConf=0.5)
+    rules = generateRules(L1, supportData1, minConf=minconf)
     # print ('rules: ', rules)
     rules.sort(key=lambda r: r[2], reverse=True)
-    output_lines = [f'{r.__str__()}\n' for r in rules]
+    output_lines = [f'{set(r[0])} ==> {set(r[1])},{round(r[2], 2)}\n' for r in rules]
     return output_lines
 
 
 if __name__ == "__main__":
-    output = testGenerateRules()
-    with open("project1.output", "w") as fw:
+     # create argument for weka
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-t", "--type", required=True)
+    ap.add_argument("-s", "--minsup", required=True)
+    ap.add_argument("-c", "--minconf", required=True)
+    args = vars(ap.parse_args())
+
+    # Determine dataset
+    if args["type"] == "kaggle":
+        data = DataLoader.load_kaggle_data()
+    elif args["type"] == "sample":
+        data = DataLoader.load_test_data()
+    elif args["type"] == "ibm":
+        data = DataLoader.load_ibm_data()
+
+    output = generateAprioriRules(data, float(args["minsup"]), float(args["minconf"]))
+    with open(f"results/{args['type']}_Apriori.csv", "w") as fw:
         fw.writelines(output)
         fw.close()
-
-
-
-
-
-
-
-
