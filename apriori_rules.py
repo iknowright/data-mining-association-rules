@@ -1,11 +1,11 @@
-# def loadDataSet():
-#     return [['A', 'C', 'D'], ['B', 'C', 'E'], ['A', 'B', 'C', 'E'], ['B', 'E']]
-
 def loadDataSet():
-    with open("kaggle.csv", "r") as fo:
-        lines = fo.readlines()
-        data = [ line.strip().split(",") for line in lines]
-        return data
+    return [['A', 'C', 'D'], ['B', 'C', 'E'], ['A', 'B', 'C', 'E'], ['B', 'E']]
+
+# def loadDataSet():
+#     with open("kaggle.csv", "r") as fo:
+#         lines = fo.readlines()
+#         data = [line.strip().split(",") for line in lines]
+#         return data
 
 
 '''建立集合C1即對dataSet去重排序'''
@@ -74,7 +74,7 @@ def aprioriGen(Lk, k):
 def apriori(dataSet, minSupport=0.5):
     # C1即對dataSet去重排序，然後轉換所有的元素為frozenset
     C1 = createC1(dataSet)
-    print(C1)
+    # print(C1)
     # 對每一行進行 set 轉換，然後存放到集合中
     D = list(map(set, dataSet))
     # 計算候選資料集C1在資料集D中的支援度，並返回支援度大於minSupport 的資料
@@ -97,28 +97,6 @@ def apriori(dataSet, minSupport=0.5):
         L.append(Lk)
         k += 1
     return L, supportData
-
-
-'''測試頻繁項集生產'''
-def testApriori():
-    # 載入測試資料集
-    dataSet = loadDataSet()
-    print ('dataSet: ', dataSet)
-
-    # Apriori 演算法生成頻繁項集以及它們的支援度
-    L1, supportData1 = apriori(dataSet, minSupport=0.7)
-    print ('L(0.7): ', L1)
-    print ('supportData(0.7): ', supportData1)
-
-    print ('->->->->->->->->->->->->->->->->->->->->->->->->->->->->')
-
-    # Apriori 演算法生成頻繁項集以及它們的支援度
-    L2, supportData2 = apriori(dataSet, minSupport=0.5)
-    print ('L(0.5): ', L2)
-    print ('supportData(0.5): ', supportData2)
-
-
-testApriori()
 
 
 '''計算可信度（confidence）
@@ -205,12 +183,19 @@ def testGenerateRules():
     # print ('dataSet: ', dataSet)
 
     # Apriori 演算法生成頻繁項集以及它們的支援度
-    L1, supportData1 = apriori(dataSet, minSupport=0.01)
-    # print ('L(0.7): ', L1)
-    # print ('supportData(0.7): ', supportData1)
+    L1, supportData1 = apriori(dataSet, minSupport=0.5)
+    print(L1)
+    for L in L1:
+        for i in L:
+            print(i)
+    print(supportData1)
+
+    for k,v in supportData1.items():
+        print(k, v)
+
 
     # 生成關聯規則
-    rules = generateRules(L1, supportData1, minConf=0.003)
+    rules = generateRules(L1, supportData1, minConf=0.5)
     # print ('rules: ', rules)
     rules.sort(key=lambda r: r[2], reverse=True)
     output_lines = [f'{r.__str__()}\n' for r in rules]
