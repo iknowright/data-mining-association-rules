@@ -96,5 +96,9 @@ class Apriori():
     def generateFrequentSet(self, data, minsup):
         # Apriori 演算法生成頻繁項集以及它們的支援度
         L1, supportData1 = self._apriori(data, minSupport=minsup)
+        freqSet = []
+        for l in L1:
+            for i in l:
+                freqSet.append(i)
 
-        return L1, supportData1
+        return freqSet, supportData1

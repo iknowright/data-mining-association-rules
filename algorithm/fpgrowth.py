@@ -124,9 +124,11 @@ class FPGrowth():
 
         freqItems = []
         supportData = {}
-        self._mineFPtree(myFPtree, myHeaderTab, minsup_index, set([]), freqItems, supportData)
 
-        for k, v in supportData.items():
-            supportData[k] = round(v / len(data), 2)
+        if freqItems:
+            self._mineFPtree(myFPtree, myHeaderTab, minsup_index, set([]), freqItems, supportData)
+
+            for k, v in supportData.items():
+                supportData[k] = round(v / len(data), 2)
 
         return freqItems, supportData
