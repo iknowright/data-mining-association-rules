@@ -1,0 +1,381 @@
+salmon ==> mineral water,0.5
+olive oil ==> mineral water,0.43
+soup ==> mineral water,0.4
+soup ==> milk,0.4
+honey ==> mineral water,0.4
+herb & pepper ==> spaghetti,0.4
+herb & pepper ==> mineral water,0.4
+herb & pepper ==> ground beef,0.4
+ground beef ==> spaghetti,0.4
+ground beef ==> mineral water,0.4
+grated cheese ==> spaghetti,0.4
+grated cheese ==> mineral water,0.4
+frozen vegetables ==> mineral water,0.4
+cooking oil ==> spaghetti,0.4
+cooking oil ==> mineral water,0.4
+milk ==> mineral water,0.38
+cake ==> mineral water,0.38
+spaghetti ==> mineral water,0.35
+whole wheat rice ==> mineral water,0.33
+turkey ==> spaghetti,0.33
+turkey ==> mineral water,0.33
+turkey ==> eggs,0.33
+red wine ==> spaghetti,0.33
+red wine ==> mineral water,0.33
+frozen smoothie ==> spaghetti,0.33
+frozen smoothie ==> mineral water,0.33
+chicken ==> spaghetti,0.33
+chicken ==> mineral water,0.33
+cereals ==> mineral water,0.33
+avocado ==> mineral water,0.33
+burgers ==> eggs,0.33
+chocolate ==> mineral water,0.31
+milk ==> spaghetti,0.31
+pancakes ==> spaghetti,0.3
+pancakes ==> mineral water,0.3
+frozen vegetables ==> spaghetti,0.3
+tomatoes ==> spaghetti,0.29
+tomatoes ==> mineral water,0.29
+tomatoes ==> frozen vegetables,0.29
+shrimp ==> spaghetti,0.29
+shrimp ==> mineral water,0.29
+shrimp ==> milk,0.29
+shrimp ==> frozen vegetables,0.29
+shrimp ==> chocolate,0.29
+olive oil ==> spaghetti,0.29
+olive oil ==> milk,0.29
+olive oil ==> chocolate,0.29
+eggs ==> mineral water,0.28
+salmon ==> spaghetti,0.25
+salmon ==> chocolate,0.25
+mineral water ==> spaghetti,0.25
+low fat yogurt ==> spaghetti,0.25
+low fat yogurt ==> mineral water,0.25
+low fat yogurt ==> eggs,0.25
+fresh bread ==> mineral water,0.25
+escalope ==> mineral water,0.25
+escalope ==> french fries,0.25
+escalope ==> chocolate,0.25
+chocolate ==> spaghetti,0.25
+cake ==> spaghetti,0.25
+cake ==> french fries,0.25
+cake ==> eggs,0.25
+spaghetti ==> milk,0.24
+spaghetti ==> ground beef,0.24
+spaghetti ==> eggs,0.24
+spaghetti ==> chocolate,0.24
+french fries ==> eggs,0.24
+milk ==> eggs,0.23
+milk ==> chocolate,0.23
+green tea ==> spaghetti,0.23
+green tea ==> mineral water,0.23
+green tea ==> french fries,0.23
+green tea ==> eggs,0.23
+eggs ==> spaghetti,0.22
+eggs ==> french fries,0.22
+burgers ==> spaghetti,0.22
+burgers ==> mineral water,0.22
+burgers ==> milk,0.22
+burgers ==> green tea,0.22
+burgers ==> french fries,0.22
+burgers ==> chocolate,0.22
+mineral water ==> milk,0.21
+mineral water ==> eggs,0.21
+mineral water ==> chocolate,0.21
+soup ==> spaghetti,0.2
+soup ==> chocolate,0.2
+pancakes ==> milk,0.2
+pancakes ==> green tea,0.2
+pancakes ==> french fries,0.2
+pancakes ==> eggs,0.2
+pancakes ==> chocolate,0.2
+honey ==> spaghetti,0.2
+herb & pepper ==> eggs,0.2
+ground beef ==> mineral water/spaghetti,0.2
+ground beef ==> milk,0.2
+ground beef ==> herb & pepper,0.2
+ground beef ==> frozen vegetables,0.2
+ground beef ==> eggs,0.2
+ground beef ==> chocolate,0.2
+grated cheese ==> ground beef,0.2
+grated cheese ==> french fries,0.2
+grated cheese ==> chocolate,0.2
+frozen vegetables ==> tomatoes,0.2
+frozen vegetables ==> shrimp,0.2
+frozen vegetables ==> milk,0.2
+frozen vegetables ==> ground beef,0.2
+frozen vegetables ==> french fries,0.2
+frozen vegetables ==> eggs,0.2
+frozen vegetables ==> chocolate,0.2
+cooking oil ==> milk,0.2
+cooking oil ==> eggs,0.2
+cooking oil ==> chocolate,0.2
+champagne ==> chocolate,0.2
+chocolate ==> milk,0.19
+chocolate ==> french fries,0.19
+chocolate ==> eggs,0.19
+spaghetti ==> pancakes,0.18
+spaghetti ==> green tea,0.18
+spaghetti ==> frozen vegetables,0.18
+spaghetti ==> french fries,0.18
+french fries ==> spaghetti,0.18
+french fries ==> mineral water,0.18
+french fries ==> green tea,0.18
+french fries ==> chocolate,0.18
+whole wheat rice ==> spaghetti,0.17
+whole wheat rice ==> milk,0.17
+whole wheat rice ==> french fries,0.17
+whole wheat rice ==> eggs,0.17
+whole wheat rice ==> chocolate,0.17
+turkey ==> milk,0.17
+turkey ==> green tea,0.17
+turkey ==> french fries,0.17
+turkey ==> chocolate,0.17
+turkey ==> burgers,0.17
+mineral water ==> ground beef,0.17
+mineral water ==> frozen vegetables,0.17
+frozen smoothie ==> milk,0.17
+frozen smoothie ==> green tea,0.17
+frozen smoothie ==> french fries,0.17
+frozen smoothie ==> eggs,0.17
+frozen smoothie ==> chocolate,0.17
+chicken ==> milk,0.17
+chicken ==> green tea,0.17
+chicken ==> french fries,0.17
+chicken ==> eggs,0.17
+chicken ==> chocolate,0.17
+eggs ==> milk,0.17
+eggs ==> green tea,0.17
+eggs ==> chocolate,0.17
+eggs ==> burgers,0.17
+milk ==> soup,0.15
+milk ==> shrimp,0.15
+milk ==> pancakes,0.15
+milk ==> olive oil,0.15
+milk ==> mineral water/spaghetti,0.15
+milk ==> ground beef,0.15
+milk ==> green tea,0.15
+milk ==> frozen vegetables,0.15
+milk ==> french fries,0.15
+milk ==> burgers,0.15
+green tea ==> pancakes,0.15
+green tea ==> milk,0.15
+green tea ==> chocolate,0.15
+green tea ==> burgers,0.15
+tomatoes ==> shrimp,0.14
+tomatoes ==> milk,0.14
+tomatoes ==> ground beef,0.14
+tomatoes ==> green tea,0.14
+tomatoes ==> french fries,0.14
+tomatoes ==> eggs,0.14
+tomatoes ==> chocolate,0.14
+shrimp ==> tomatoes,0.14
+shrimp ==> pancakes,0.14
+shrimp ==> ground beef,0.14
+shrimp ==> green tea,0.14
+shrimp ==> eggs,0.14
+olive oil ==> pancakes,0.14
+olive oil ==> mineral water/spaghetti,0.14
+olive oil ==> ground beef,0.14
+olive oil ==> frozen vegetables,0.14
+olive oil ==> eggs,0.14
+mineral water ==> pancakes,0.12
+mineral water ==> olive oil,0.12
+mineral water ==> green tea,0.12
+mineral water ==> french fries,0.12
+mineral water ==> cake,0.12
+low fat yogurt ==> milk,0.12
+low fat yogurt ==> frozen vegetables,0.12
+low fat yogurt ==> french fries,0.12
+low fat yogurt ==> chocolate,0.12
+escalope ==> spaghetti,0.12
+escalope ==> eggs,0.12
+cookies ==> green tea,0.12
+cookies ==> french fries,0.12
+cookies ==> eggs,0.12
+cookies ==> chocolate,0.12
+chocolate ==> shrimp,0.12
+chocolate ==> pancakes,0.12
+chocolate ==> olive oil,0.12
+chocolate ==> mineral water/spaghetti,0.12
+chocolate ==> ground beef,0.12
+chocolate ==> green tea,0.12
+chocolate ==> frozen vegetables,0.12
+chocolate ==> escalope,0.12
+chocolate ==> burgers,0.12
+cake ==> pancakes,0.12
+cake ==> milk,0.12
+cake ==> green tea,0.12
+cake ==> frozen vegetables,0.12
+cake ==> chocolate,0.12
+cake ==> burgers,0.12
+spaghetti ==> turkey,0.12
+spaghetti ==> tomatoes,0.12
+spaghetti ==> shrimp,0.12
+spaghetti ==> olive oil,0.12
+spaghetti ==> milk/mineral water,0.12
+spaghetti ==> low fat yogurt,0.12
+spaghetti ==> herb & pepper,0.12
+spaghetti ==> ground beef/mineral water,0.12
+spaghetti ==> grated cheese,0.12
+spaghetti ==> frozen smoothie,0.12
+spaghetti ==> cooking oil,0.12
+spaghetti ==> chocolate/mineral water,0.12
+spaghetti ==> chicken,0.12
+spaghetti ==> cake,0.12
+spaghetti ==> burgers,0.12
+french fries ==> pancakes,0.12
+french fries ==> milk,0.12
+french fries ==> frozen vegetables,0.12
+french fries ==> escalope,0.12
+french fries ==> cake,0.12
+french fries ==> burgers,0.12
+eggs ==> turkey,0.11
+eggs ==> pancakes,0.11
+eggs ==> low fat yogurt,0.11
+eggs ==> ground beef,0.11
+eggs ==> frozen vegetables,0.11
+eggs ==> cake,0.11
+burgers ==> turkey,0.11
+burgers ==> pancakes,0.11
+burgers ==> ground beef,0.11
+burgers ==> frozen vegetables,0.11
+burgers ==> cake,0.11
+pancakes ==> shrimp,0.1
+pancakes ==> olive oil,0.1
+pancakes ==> mineral water/spaghetti,0.1
+pancakes ==> ground beef,0.1
+pancakes ==> frozen vegetables,0.1
+pancakes ==> cake,0.1
+pancakes ==> burgers,0.1
+ground beef ==> tomatoes,0.1
+ground beef ==> shrimp,0.1
+ground beef ==> pancakes,0.1
+ground beef ==> olive oil,0.1
+ground beef ==> milk/mineral water,0.1
+ground beef ==> green tea,0.1
+ground beef ==> grated cheese,0.1
+ground beef ==> french fries,0.1
+ground beef ==> eggs/mineral water,0.1
+ground beef ==> chocolate/mineral water,0.1
+ground beef ==> burgers,0.1
+frozen vegetables ==> pancakes,0.1
+frozen vegetables ==> olive oil,0.1
+frozen vegetables ==> mineral water/spaghetti,0.1
+frozen vegetables ==> milk/mineral water,0.1
+frozen vegetables ==> low fat yogurt,0.1
+frozen vegetables ==> green tea,0.1
+frozen vegetables ==> cake,0.1
+frozen vegetables ==> burgers,0.1
+mineral water ==> whole wheat rice,0.08
+mineral water ==> turkey,0.08
+mineral water ==> tomatoes,0.08
+mineral water ==> soup,0.08
+mineral water ==> shrimp,0.08
+mineral water ==> salmon,0.08
+mineral water ==> milk/spaghetti,0.08
+mineral water ==> low fat yogurt,0.08
+mineral water ==> honey,0.08
+mineral water ==> herb & pepper,0.08
+mineral water ==> ground beef/spaghetti,0.08
+mineral water ==> grated cheese,0.08
+mineral water ==> frozen smoothie,0.08
+mineral water ==> escalope,0.08
+mineral water ==> cooking oil,0.08
+mineral water ==> chocolate/spaghetti,0.08
+mineral water ==> chicken,0.08
+mineral water ==> burgers,0.08
+milk ==> whole wheat rice,0.08
+milk ==> turkey,0.08
+milk ==> tomatoes,0.08
+milk ==> low fat yogurt,0.08
+milk ==> ground beef/mineral water,0.08
+milk ==> frozen vegetables/mineral water,0.08
+milk ==> frozen smoothie,0.08
+milk ==> eggs/mineral water,0.08
+milk ==> cooking oil,0.08
+milk ==> chocolate/spaghetti,0.08
+milk ==> chocolate/mineral water,0.08
+milk ==> chicken,0.08
+milk ==> cake,0.08
+green tea ==> turkey,0.08
+green tea ==> tomatoes,0.08
+green tea ==> shrimp,0.08
+green tea ==> ground beef,0.08
+green tea ==> frozen vegetables,0.08
+green tea ==> frozen smoothie,0.08
+green tea ==> cookies,0.08
+green tea ==> chicken,0.08
+green tea ==> cake,0.08
+chocolate ==> whole wheat rice,0.06
+chocolate ==> turkey,0.06
+chocolate ==> tomatoes,0.06
+chocolate ==> soup,0.06
+chocolate ==> salmon,0.06
+chocolate ==> milk/spaghetti,0.06
+chocolate ==> milk/mineral water,0.06
+chocolate ==> low fat yogurt,0.06
+chocolate ==> ground beef/mineral water,0.06
+chocolate ==> grated cheese,0.06
+chocolate ==> frozen smoothie,0.06
+chocolate ==> eggs/spaghetti,0.06
+chocolate ==> eggs/mineral water,0.06
+chocolate ==> cooking oil,0.06
+chocolate ==> cookies,0.06
+chocolate ==> chicken,0.06
+chocolate ==> champagne,0.06
+chocolate ==> cake,0.06
+spaghetti ==> whole wheat rice,0.06
+spaghetti ==> soup,0.06
+spaghetti ==> salmon,0.06
+spaghetti ==> red wine,0.06
+spaghetti ==> mineral water/pancakes,0.06
+spaghetti ==> mineral water/olive oil,0.06
+spaghetti ==> honey,0.06
+spaghetti ==> frozen vegetables/mineral water,0.06
+spaghetti ==> french fries/mineral water,0.06
+spaghetti ==> escalope,0.06
+spaghetti ==> eggs/mineral water,0.06
+spaghetti ==> chocolate/milk,0.06
+spaghetti ==> chocolate/eggs,0.06
+french fries ==> whole wheat rice,0.06
+french fries ==> turkey,0.06
+french fries ==> tomatoes,0.06
+french fries ==> mineral water/spaghetti,0.06
+french fries ==> low fat yogurt,0.06
+french fries ==> ground beef,0.06
+french fries ==> grated cheese,0.06
+french fries ==> frozen smoothie,0.06
+french fries ==> cookies,0.06
+french fries ==> chicken,0.06
+eggs ==> whole wheat rice,0.06
+eggs ==> tomatoes,0.06
+eggs ==> shrimp,0.06
+eggs ==> olive oil,0.06
+eggs ==> mineral water/spaghetti,0.06
+eggs ==> milk/mineral water,0.06
+eggs ==> herb & pepper,0.06
+eggs ==> ground beef/mineral water,0.06
+eggs ==> frozen smoothie,0.06
+eggs ==> escalope,0.06
+eggs ==> cooking oil,0.06
+eggs ==> cookies,0.06
+eggs ==> chocolate/spaghetti,0.06
+eggs ==> chocolate/mineral water,0.06
+eggs ==> chicken,0.06
+mineral water ==> red wine,0.04
+mineral water ==> pancakes/spaghetti,0.04
+mineral water ==> olive oil/spaghetti,0.04
+mineral water ==> ground beef/milk,0.04
+mineral water ==> frozen vegetables/spaghetti,0.04
+mineral water ==> frozen vegetables/milk,0.04
+mineral water ==> fresh bread,0.04
+mineral water ==> french fries/spaghetti,0.04
+mineral water ==> eggs/spaghetti,0.04
+mineral water ==> eggs/milk,0.04
+mineral water ==> eggs/ground beef,0.04
+mineral water ==> chocolate/milk,0.04
+mineral water ==> chocolate/ground beef,0.04
+mineral water ==> chocolate/eggs,0.04
+mineral water ==> cereals,0.04
+mineral water ==> avocado,0.04
