@@ -15,7 +15,7 @@ def execution_timer(func):
         start = time.time()
         func_ret = func(*args)
         elapsed = time.time() - start
-        print(f'{func.__name__}:time {elapsed} elapsed second(s)')
+        # print(f'{func.__name__}:time {elapsed} elapsed second(s)')
         return func_ret, elapsed
     return wrapper
 
@@ -59,7 +59,7 @@ class Associator():
                 conf = supportData[freqSet]/supportData[freqSet-conseq] # 支援度定義: a -> b = support(a | b) / support(a). 假設  freqSet = frozenset([1, 3]), conseq = [frozenset([1])]，那麼 frozenset([1]) 至 frozenset([3]) 的可信度為 = support(a | b) / support(a) = supportData[freqSet]/supportData[freqSet-conseq] = supportData[frozenset([1, 3])] / supportData[frozenset([1])]
                 if conf >= minConf:
                     # 只要買了 freqSet-conseq 集合，一定會買 conseq 集合（freqSet-conseq 集合和 conseq集合 是全集）
-                    print (freqSet-conseq, '-->', conseq, 'conf:', conf)
+                    # print (freqSet-conseq, '-->', conseq, 'conf:', conf)
                     brl.append((freqSet-conseq, conseq, conf))
                     prunedH.append(conseq)
             except:
@@ -121,7 +121,7 @@ class Associator():
 
     @execution_timer
     def generate_rules(self, algorithm, data, minsup, minconf):
-        print(algorithm)
+        # print(algorithm)
         L1, supportData1 = algorithm.generateFrequentSet(data, minsup)
 
         # 生成關聯規則
