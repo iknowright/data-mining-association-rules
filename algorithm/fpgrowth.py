@@ -102,8 +102,6 @@ class FPGrowth():
 
                 sub_tree, sub_header_table = self._create_FP_tree(condition_pattern_base, minsup)
                 if sub_header_table != None:
-                    sub_tree.display()
-                    print()
                     self._mine_FP_tree(sub_tree, sub_header_table, minsup, new_frequent_itemset, total_frequent_set, itemset_support)
         except:
             pass
@@ -125,8 +123,6 @@ class FPGrowth():
 
         init_set = self._create_init_set(data)
         fp_tree, header_table = self._create_FP_tree(init_set, minsup_index)
-        fp_tree.display()
-        print()
 
         frequent_set = []
         itemset_support = {}
