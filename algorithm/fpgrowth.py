@@ -1,13 +1,13 @@
-class treeNode:
-    def __init__(self, nameValue, numOccur, parentNode):
-        self.name = nameValue
-        self.count = numOccur
-        self.nodeLink = None
-        self.parent = parentNode
+class TreeNode:
+    def __init__(self, name_value, num_occur, parent):
+        self.name = name_value
+        self.count = num_occur
+        self.next_node = None
+        self.parent = parent
         self.children = {}
 
-    def increase(self, numOccur):
-        self.count += numOccur
+    def increase(self, num_occur):
+        self.count += num_occur
 
     def display(self, ind=1):
         print ('  '*ind, self.name, ' ', self.count)
@@ -18,120 +18,123 @@ class FPGrowth():
     def __init__(self):
         pass
 
-    def _createFPtree(self, dataSet, minSup=1):
-        headerTable = {}
-        for trans in dataSet:
-            for item in trans:
-                headerTable[item] = headerTable.get(item, 0) + dataSet[trans]
-        keys = [k for k in headerTable.keys()]
+    def _create_FP_tree(self, data, minsup):
+        header_table = {}
+        for transaction in data:
+            for item in transaction:
+                header_table[item] = header_table.get(item, 0) + data[transaction]
+        keys = [k for k in header_table.keys()]
         for k in keys:
-            if headerTable[k] < minSup:
-                del(headerTable[k]) # 删除不满足最小支持度的元素
-        freqItemSet = set(headerTable.keys()) # 满足最小支持度的频繁项集
-        if len(freqItemSet) == 0:
+            if header_table[k] < minsup:
+                del(header_table[k])
+
+        frequent_itemset = set(header_table.keys())
+        if len(frequent_itemset) == 0:
             return None, None
-        for k in headerTable:
-            headerTable[k] = [headerTable[k], None] # element: [count, node]
+        for k in header_table:
+            header_table[k] = [header_table[k], None]
 
-        retTree = treeNode('Null Set', 1, None)
-        for tranSet, count in dataSet.items():
-            # dataSet：[element, count]
-            localD = {}
-            for item in tranSet:
-                if item in freqItemSet: # 过滤，只取该样本中满足最小支持度的频繁项
-                    localD[item] = headerTable[item][0] # element : count
-            if len(localD) > 0:
-                # 根据全局频数从大到小对单样本排序
-                orderedItem = [v[0] for v in sorted(localD.items(), key=lambda p:p[1], reverse=True)]
-                # 用过滤且排序后的样本更新树
-                self._updateFPtree(orderedItem, retTree, headerTable, count)
-        return retTree, headerTable
+        return_tree = TreeNode('Null Set', 1, None)
+        for itemset, count in data.items():
+            local_items_count = {}
+            for item in itemset:
+                if item in frequent_itemset:
+                    local_items_count[item] = header_table[item][0]
+            if len(local_items_count) > 0:
+                ordered_items = [v[0] for v in sorted(local_items_count.items(), key=lambda p:p[1], reverse=True)]
+                self._update_FP_tree(ordered_items, return_tree, header_table, count)
+        return return_tree, header_table
 
+    def _update_header(self, item_node, targetNode):
+        """Determine how many leaves are there for a given item in the tree"""
+        # traverse through the next node
+        while item_node.next_node != None:
+            item_node = item_node.next_node
+        item_node.next_node = targetNode
 
-    def _updateHeader(self, nodeToTest, targetNode):
-        while nodeToTest.nodeLink != None:
-            nodeToTest = nodeToTest.nodeLink
-        nodeToTest.nodeLink = targetNode
-
-
-    def _updateFPtree(self, items, inTree, headerTable, count):
-        if items[0] in inTree.children:
-            # 判断items的第一个结点是否已作为子结点
-            inTree.children[items[0]].increase(count)
+    def _update_FP_tree(self, items, curr_tree, header_table, count):
+        # check if current items head is already a curr tree's child
+        if items[0] in curr_tree.children:
+            curr_tree.children[items[0]].increase(count)
         else:
-            # 创建新的分支
-            inTree.children[items[0]] = treeNode(items[0], count, inTree)
-            # 更新相应频繁项集的链表，往后添加
-            if headerTable[items[0]][1] == None:
-                headerTable[items[0]][1] = inTree.children[items[0]]
+            # if not, make the item[0] curr tree's child
+            curr_tree.children[items[0]] = TreeNode(items[0], count, curr_tree)
+            if header_table[items[0]][1] == None:
+                header_table[items[0]][1] = curr_tree.children[items[0]]
             else:
-                self._updateHeader(headerTable[items[0]][1], inTree.children[items[0]])
-        # 递归
+                # tells tree there are more than 1 leaf for the given `item` in header_table
+                self._update_header(header_table[items[0]][1], curr_tree.children[items[0]])
+
+        # if items are more than 1 then do it recursively, [(0),1,2] --> [(1),2] -> [(2)]
         if len(items) > 1:
-            self._updateFPtree(items[1::], inTree.children[items[0]], headerTable, count)
+            self._update_FP_tree(items[1::], curr_tree.children[items[0]], header_table, count)
 
-    # 递归回溯
-    def _ascendFPtree(self, leafNode, prefixPath):
-        if leafNode.parent != None:
-            prefixPath.append(leafNode.name)
-            self._ascendFPtree(leafNode.parent, prefixPath)
-    # 条件模式基
+    def _ascend_FP_tree(self, curr_node, prefix_path):
+        if curr_node.parent != None:
+            prefix_path.append(curr_node.name)
+            self._ascend_FP_tree(curr_node.parent, prefix_path)
 
+    def _find_prefix_path(self, curr_base_pattern, header_table):
+        self_tree = header_table[curr_base_pattern][1]
+        condition_patterns = {}
+        while self_tree != None:
+            prefix_path = []
+            self._ascend_FP_tree(self_tree, prefix_path)
+            if len(prefix_path) > 1:
+                condition_patterns[frozenset(prefix_path[1:])] = self_tree.count
+            self_tree = self_tree.next_node
+        return condition_patterns
 
-    def _findPrefixPath(self, basePat, myHeaderTab):
-        treeNode = myHeaderTab[basePat][1] # basePat在FP树中的第一个结点
-        condPats = {}
-        while treeNode != None:
-            prefixPath = []
-            self._ascendFPtree(treeNode, prefixPath) # prefixPath是倒过来的，从treeNode开始到根
-            if len(prefixPath) > 1:
-                condPats[frozenset(prefixPath[1:])] = treeNode.count # 关联treeNode的计数
-            treeNode = treeNode.nodeLink # 下一个basePat结点
-        return condPats
-
-
-    def _mineFPtree(self, inTree, headerTable, minSup, preFix, freqItemList, supportData):
-        # 最开始的频繁项集是headerTable中的各元素
+    def _mine_FP_tree(self, curr_tree, header_table, minsup, prefix, total_frequent_set, itemset_support):
         try:
-            bigL = [v[0] for v in sorted(headerTable.items(), key=lambda p:p[1][0])] # 根据频繁项的总频次排序
-            for basePat in bigL: # 对每个频繁项
-                newFreqSet = preFix.copy()
-                newFreqSet.add(basePat)
-                freqItemList.append(frozenset(newFreqSet))
-                supportData[frozenset(newFreqSet)] = headerTable[basePat][0]
-                condPattBases = self._findPrefixPath(basePat, headerTable) # 当前频繁项集的条件模式基
-                myCondTree, myHead = self._createFPtree(condPattBases, minSup) # 构造当前频繁项的条件FP树
-                if myHead != None:
-                    # print 'conditional tree for: ', newFreqSet
-                    # myCondTree.disp(1)
-                    self._mineFPtree(myCondTree, myHead, minSup, newFreqSet, freqItemList, supportData) # 递归挖掘条件FP树
+            reverse_items = [v[0] for v in sorted(header_table.items(), key=lambda p:p[1][0])]
+            for curr_base_pattern in reverse_items:
+                new_frequent_itemset = prefix.copy()
+                new_frequent_itemset.add(curr_base_pattern)
+
+                total_frequent_set.append(frozenset(new_frequent_itemset))
+
+                itemset_support[frozenset(new_frequent_itemset)] = header_table[curr_base_pattern][0]
+
+                # print(f"curr:{curr_base_pattern}, prefix: {prefix if prefix else '{}'}, freqset: {new_frequent_itemset}, support: {header_table[curr_base_pattern][0]}")
+
+                condition_pattern_base = self._find_prefix_path(curr_base_pattern, header_table)
+
+                sub_tree, sub_header_table = self._create_FP_tree(condition_pattern_base, minsup)
+                if sub_header_table != None:
+                    sub_tree.display()
+                    print()
+                    self._mine_FP_tree(sub_tree, sub_header_table, minsup, new_frequent_itemset, total_frequent_set, itemset_support)
         except:
             pass
 
-    def _createInitSet(self, dataSet):
-        retDict={}
-        for trans in dataSet:
-            key = frozenset(trans)
-            if key in retDict:
-                retDict[frozenset(trans)] += 1
+    def _create_init_set(self, data):
+        """Return {itemset: count, ...}"""
+
+        itemset_count = {}
+        for transaction in data:
+            if frozenset(transaction) in itemset_count:
+                itemset_count[frozenset(transaction)] += 1
             else:
-                retDict[frozenset(trans)] = 1
-        return retDict
+                itemset_count[frozenset(transaction)] = 1
+        return itemset_count
 
 
     def generateFrequentSet(self, data, minsup):
         minsup_index = minsup * len(data)
 
-        initSet = self._createInitSet(data)
-        myFPtree, myHeaderTab = self._createFPtree(initSet, minsup_index)
+        init_set = self._create_init_set(data)
+        fp_tree, header_table = self._create_FP_tree(init_set, minsup_index)
+        fp_tree.display()
+        print()
 
-        freqItems = []
-        supportData = {}
+        frequent_set = []
+        itemset_support = {}
 
-        self._mineFPtree(myFPtree, myHeaderTab, minsup_index, set([]), freqItems, supportData)
+        self._mine_FP_tree(fp_tree, header_table, minsup_index, set(), frequent_set, itemset_support)
 
-        if freqItems:
-            for k, v in supportData.items():
-                supportData[k] = round(v / len(data), 2)
+        if frequent_set:
+            for k, v in itemset_support.items():
+                itemset_support[k] = round(v / len(data), 2)
 
-        return freqItems, supportData
+        return frequent_set, itemset_support
