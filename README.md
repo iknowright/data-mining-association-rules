@@ -129,7 +129,7 @@ In arff format:
 
 ## 實驗結果
 
-實驗結果請參照：
+實驗結果請參照：`analysis.ipynb` or [WebView Note](https://nbviewer.jupyter.org/github/iknowright/data-mining-association-rules/blob/master/analysis.ipynb)
 
 ## 心得
 
@@ -141,3 +141,6 @@ In arff format:
 
 
 ### 參考文獻
+
+1. [一步步教你輕鬆學關聯規則Apriori演算法](https://www.itread01.com/content/1544958735.html)
+2. [FP-growth 算法与Python实现](https://blog.csdn.net/songbinxu/article/details/80411388)
